@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Carpetas que el FileProvider puede compartir como content:// en vez de file:// -->
+<paths>
+    <cache-path name="curriculums" path="curriculums/" />
+    <files-path name="documentos" path="documentos/" />
+</paths>

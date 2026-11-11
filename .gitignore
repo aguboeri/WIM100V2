@@ -1,0 +1,15 @@
+# Compilación
+build/
+/build
+.gradle/
+.cxx
+.externalNativeBuild
+/captures
+
+# Configuración local de la máquina (ruta del SDK): no se versiona
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.DS_Store
