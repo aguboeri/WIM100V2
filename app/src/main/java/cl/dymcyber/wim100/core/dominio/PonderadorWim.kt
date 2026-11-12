@@ -2,26 +2,19 @@ package cl.dymcyber.wim100.core.dominio
 
 import kotlin.math.roundToInt
 
-/**
- * Traduce los puntajes de la matriz WIM a una nota unica de 0 a 100.
- *
- * Kotlin puro, sin Android ni Room: por eso se puede cubrir con pruebas
- * unitarias que corren en segundos, sin emulador.
- *
- * Formula: se suma cada puntaje multiplicado por el peso de su criterio y se
- * divide por el maximo alcanzable, que es el peso total por el puntaje maximo.
- */
+/** Traduce los puntajes de la matriz WIM a una nota única de 0 a 100. */
 object PonderadorWim {
 
     const val PUNTAJE_MINIMO = 1
     const val PUNTAJE_MAXIMO = 5
 
-    /** Un criterio puntuado: cuanto pesa en la matriz y que nota obtuvo. */
+    /** Peso del criterio y puntaje obtenido. */
     data class Aporte(val peso: Int, val puntaje: Int)
 
     /**
+     * Una lista vacia o con pesos en cero devuelve 0.0.
+     *
      * @return puntaje ponderado entre 0.0 y 100.0, con un decimal.
-     *         Una lista vacia o con pesos en cero devuelve 0.0.
      */
     fun consolidar(aportes: List<Aporte>): Double {
         val pesoTotal = aportes.sumOf { it.peso }

@@ -6,23 +6,12 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 
-/**
- * Recurso nativo: verificación biométrica.
- *
- * Se usa solo para entrar como Dirección, que es el perfil que puede
- * seleccionar o descartar a una postulante. El permiso USE_BIOMETRIC es normal:
- * se concede al instalar y no abre un diálogo.
- *
- * Importante: BiometricPrompt necesita una FragmentActivity, por eso
- * MainActivity hereda de ella y no de ComponentActivity.
- */
+/** Recurso nativo: verificación biométrica, exigida al perfil Dirección. */
 object VerificacionBiometrica {
 
     /** En qué estado está el equipo respecto de la biometría. */
     enum class Estado { DISPONIBLE, SIN_SENSOR, SIN_REGISTRO, NO_DISPONIBLE }
 
-    // Solo biometría: combinarla con el PIN del equipo no está permitido en
-    // todas las versiones de Android y haría fallar el diálogo.
     private const val METODOS = BiometricManager.Authenticators.BIOMETRIC_WEAK
 
     fun revisar(contexto: Context): Estado =

@@ -8,12 +8,7 @@ import cl.dymcyber.wim100.core.dominio.EtapaPostulacion
 import cl.dymcyber.wim100.datos.bd.entidades.Postulante
 import kotlinx.coroutines.flow.Flow
 
-/**
- * Consultas sobre la tabla de postulantes.
- *
- * Las que devuelven `Flow` son reactivas: Room vuelve a emitir sola cada vez que
- * la tabla cambia, así la lista de la pantalla se actualiza sin recargar nada.
- */
+/** Consultas sobre la tabla de postulantes. */
 @Dao
 interface PostulanteDao {
 

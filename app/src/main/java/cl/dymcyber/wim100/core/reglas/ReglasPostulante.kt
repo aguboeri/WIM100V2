@@ -1,15 +1,6 @@
 package cl.dymcyber.wim100.core.reglas
 
-/**
- * Reglas del formulario de postulacion.
- *
- * Vive fuera de la interfaz a proposito: aqui no se importa nada de Android ni
- * de Compose, asi que estas reglas se prueban con tests unitarios y la pantalla
- * se limita a mostrar el aviso que devuelven.
- *
- * Cada funcion revisa de lo mas general a lo mas especifico y corta en el
- * primer problema, para no acumular mensajes contradictorios.
- */
+/** Reglas del formulario de postulación. */
 object ReglasPostulante {
 
     const val NOMBRE_LARGO_MINIMO = 3
@@ -19,10 +10,7 @@ object ReglasPostulante {
     const val SINTESIS_LARGO_MAXIMO = 500
     const val CV_PESO_MAXIMO_BYTES = 5L * 1024 * 1024
 
-    /**
-     * El caso prohibe datos reales, asi que solo se aceptan dominios de prueba.
-     * Agregar uno nuevo es cambiar esta lista y nada mas.
-     */
+    /** El caso prohibe datos reales, así que solo se aceptan dominios de prueba. */
     val DOMINIOS_DE_PRUEBA = listOf("ejemplo.cl", "example.com", "test.cl")
 
     private val SOLO_LETRAS = Regex("^[\\p{L} ']+$")

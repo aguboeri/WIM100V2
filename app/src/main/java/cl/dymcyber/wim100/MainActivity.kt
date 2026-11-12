@@ -10,12 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.fragment.app.FragmentActivity
 import cl.dymcyber.wim100.disenio.TemaWim
 
-/**
- * Única Activity de la app: todo lo demás son Composables.
- *
- * Hereda de FragmentActivity y no de ComponentActivity porque BiometricPrompt,
- * el diálogo del sistema que verifica la huella, lo exige.
- */
+/** Única Activity de la app; todo lo demás son Composables. */
 class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

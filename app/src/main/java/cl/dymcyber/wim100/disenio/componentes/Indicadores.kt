@@ -32,13 +32,7 @@ import cl.dymcyber.wim100.disenio.RojoReparo
 import cl.dymcyber.wim100.disenio.VerdeContenedor
 import cl.dymcyber.wim100.disenio.VerdeProfundo
 
-/**
- * Etiqueta de color con la etapa de una postulación.
- *
- * El color acompaña, pero nunca es la única señal: la etiqueta siempre dice la
- * etapa con palabras, para que se entienda igual en blanco y negro o para quien
- * no distingue ciertos colores.
- */
+/** Etiqueta de color con la etapa de una postulación. */
 @Composable
 fun EtiquetaEtapa(etapa: EtapaPostulacion, modifier: Modifier = Modifier) {
     val fondo: Color
@@ -68,13 +62,7 @@ fun EtiquetaEtapa(etapa: EtapaPostulacion, modifier: Modifier = Modifier) {
     }
 }
 
-/**
- * Medidor circular del puntaje.
- *
- * El anillo se anima al cambiar el valor (`animateFloatAsState`), así la
- * evaluadora ve crecer el puntaje mientras completa la matriz y entiende de
- * inmediato que su elección tuvo efecto.
- */
+/** Medidor circular del puntaje. */
 @Composable
 fun MedidorPuntaje(
     puntaje: Double,
@@ -147,7 +135,7 @@ fun TituloSeccion(texto: String, apoyo: String? = null, modifier: Modifier = Mod
     }
 }
 
-/** Fila de dato: una etiqueta a la izquierda y su valor a la derecha. */
+/** Fila con una etiqueta a la izquierda y su valor a la derecha. */
 @Composable
 fun FilaDato(etiqueta: String, valor: String, modifier: Modifier = Modifier) {
     Row(

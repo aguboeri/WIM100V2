@@ -4,10 +4,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-/** Presentación de fechas, pesos y puntajes. Solo da formato, no decide nada. */
+/** Presentación de fechas, pesos y puntajes. */
 object Formateador {
 
-    /** Español de Chile: decide el separador decimal y el orden de la fecha. */
+    /** Español de Chile, para el separador decimal y el orden de la fecha. */
     private val CHILE: Locale = Locale.forLanguageTag("es-CL")
 
     private val FECHA_CORTA = SimpleDateFormat("dd/MM/yyyy", CHILE)

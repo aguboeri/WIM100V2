@@ -9,16 +9,10 @@ import cl.dymcyber.wim100.datos.bd.entidades.EventoBitacora
 import cl.dymcyber.wim100.datos.bd.entidades.Postulante
 import cl.dymcyber.wim100.datos.bd.entidades.Valoracion
 
-/**
- * Datos de arranque, todos ficticios.
- *
- * Solo se cargan si la base está vacía, así que no se duplican al reabrir la
- * app. Sirven para mostrar el flujo completo sin inventar datos en la demo y
- * sin usar información real de ninguna persona, como exige el caso.
- */
+/** Datos de arranque, todos ficticios. */
 object PrecargaDemo {
 
-    /** Matriz de ejemplo. Los pesos suman 100. */
+    /** Matriz de ejemplo. */
     val MATRIZ = listOf(
         CriterioWim(
             nombre = "Experiencia técnica",
@@ -52,7 +46,7 @@ object PrecargaDemo {
         )
     )
 
-    /** Postulantes de muestra. Nombres, correos y teléfonos inventados. */
+    /** Postulantes de muestra. */
     val POSTULANTES = listOf(
         Postulante(
             nombre = "Camila Soto",
@@ -119,13 +113,7 @@ object PrecargaDemo {
     /** Evaluadoras ficticias que dejan valoraciones de ejemplo. */
     private val EVALUADORAS = listOf("Paula Lagos", "Ignacia Bravo")
 
-    /**
-     * Llena la base solo si está vacía.
-     *
-     * Carga la matriz, las postulantes y dos valoraciones para las dos primeras,
-     * de modo que al abrir la app ya exista una postulante en estado Evaluada
-     * que Dirección pueda resolver.
-     */
+    /** Llena la base solo si está vacía. */
     suspend fun sembrar(base: BaseWim) {
         if (base.criterios().contar() > 0 || base.postulantes().contarTodas() > 0) return
 
@@ -134,7 +122,6 @@ object PrecargaDemo {
 
         val idsPostulantes = POSTULANTES.map { base.postulantes().insertar(it) }
 
-        // Las dos primeras postulantes quedan evaluadas por las dos evaluadoras.
         val puntajesDemo = listOf(
             listOf(5, 4, 5, 4, 5),
             listOf(4, 4, 4, 5, 4),

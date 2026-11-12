@@ -53,14 +53,7 @@ import cl.dymcyber.wim100.disenio.componentes.sacudir
 import cl.dymcyber.wim100.dispositivo.AvisosLocales
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Aplicación de la matriz WIM.
- *
- * Cada criterio se puntúa de 1 a 5. Si el puntaje es bajo aparece el campo de
- * justificación, obligatorio: una nota baja sin explicación no se puede
- * guardar. El puntaje proyectado se actualiza en vivo para que la evaluadora
- * vea el efecto del peso de cada criterio.
- */
+/** Aplicación de la matriz WIM. */
 @Composable
 fun ValoracionPantalla(
     alTerminar: () -> Unit,
@@ -70,7 +63,6 @@ fun ValoracionPantalla(
     val estado by vm.estado.collectAsStateWithLifecycle()
     val contexto = LocalContext.current
 
-    // Recurso nativo: notificaciones. El permiso se pide solo en Android 13+.
     val permisoAvisos = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission()
     ) { /* Si lo rechaza, la app sigue funcionando igual. */ }
@@ -209,7 +201,7 @@ fun ValoracionPantalla(
     }
 }
 
-/** Un criterio de la matriz: su peso, los cinco puntajes y la justificación. */
+/** Un criterio de la matriz, con sus cinco puntajes y la justificación. */
 @Composable
 private fun BloqueCriterio(
     criterio: CriterioWim,

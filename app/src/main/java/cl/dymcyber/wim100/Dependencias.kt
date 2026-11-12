@@ -11,13 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-/**
- * Contenedor de dependencias, armado a mano.
- *
- * Crea una sola base de datos y un solo repositorio de cada tipo, y se los
- * entrega a los ViewModel. Es inyección de dependencias sin librerías: para un
- * MVP de este tamaño alcanza y se entiende leyendo una pantalla de código.
- */
+/** Contenedor de dependencias, armado a mano. */
 class Dependencias(contexto: Context) {
 
     private val base: BaseWim = BaseWim.obtener(contexto)
@@ -34,7 +28,7 @@ class Dependencias(contexto: Context) {
 
     private val _sesion = MutableStateFlow<Sesion?>(null)
 
-    /** Sesión activa. Null significa que nadie ha ingresado todavía. */
+    /** Sesión activa. */
     val sesion: StateFlow<Sesion?> = _sesion.asStateFlow()
 
     fun abrirSesion(nueva: Sesion) { _sesion.value = nueva }

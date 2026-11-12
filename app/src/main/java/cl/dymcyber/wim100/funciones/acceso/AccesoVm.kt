@@ -24,13 +24,7 @@ data class AccesoUi(
     val listoParaEntrar: Boolean get() = nombre.valor.isNotBlank() && nombre.correcto
 }
 
-/**
- * Identifica a quien usa la app.
- *
- * El nombre no es un adorno: queda firmando cada acción en la bitácora y es lo
- * que impide que una misma evaluadora valore dos veces a la misma postulante.
- * Por eso se valida igual que cualquier otro dato.
- */
+/** Identifica a quien usa la app. */
 class AccesoVm(private val deps: Dependencias) : ViewModel() {
 
     private val _estado = MutableStateFlow(AccesoUi())
@@ -46,7 +40,7 @@ class AccesoVm(private val deps: Dependencias) : ViewModel() {
 
     fun avisar(texto: String?) = _estado.update { it.copy(aviso = texto, verificando = false) }
 
-    /** Revisa el formulario completo antes de pedir la huella. @return true si puede seguir. */
+    /** Revisa el formulario completo antes de pedir la huella. */
     fun formularioValido(): Boolean {
         val veredicto = ReglasPostulante.nombre(_estado.value.nombre.valor)
         _estado.update { it.copy(nombre = it.nombre.revisado(it.nombre.valor, veredicto)) }

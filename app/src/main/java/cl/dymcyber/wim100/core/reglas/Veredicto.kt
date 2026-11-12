@@ -1,11 +1,6 @@
 package cl.dymcyber.wim100.core.reglas
 
-/**
- * Resultado de revisar un dato: o esta correcto, o hay un reparo que explicar.
- *
- * Es una interfaz sellada (sealed): el compilador sabe que solo existen estos
- * dos casos, asi que un `when` sobre un Veredicto no necesita rama `else`.
- */
+/** Resultado de revisar un dato: correcto, o con un reparo que explicar. */
 sealed interface Veredicto {
 
     /** El dato cumple todas las reglas. */

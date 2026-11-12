@@ -41,13 +41,7 @@ import cl.dymcyber.wim100.disenio.componentes.EstadoVacio
 import cl.dymcyber.wim100.disenio.componentes.EtiquetaEtapa
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Listado de postulaciones con búsqueda y filtro por etapa.
- *
- * La pantalla no filtra nada: recibe del ViewModel la lista ya resuelta y solo
- * decide cómo mostrarla. Cuando no hay resultados muestra un estado vacío que
- * explica por qué, en vez de dejar la pantalla en blanco.
- */
+/** Listado de postulaciones con búsqueda y filtro por etapa. */
 @Composable
 fun PostulantesPantalla(
     alAbrirFicha: (Long) -> Unit,

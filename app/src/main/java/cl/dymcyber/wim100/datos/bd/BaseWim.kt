@@ -15,15 +15,7 @@ import cl.dymcyber.wim100.datos.bd.entidades.EventoBitacora
 import cl.dymcyber.wim100.datos.bd.entidades.Postulante
 import cl.dymcyber.wim100.datos.bd.entidades.Valoracion
 
-/**
- * La base de datos local: SQLite administrado por Room, en el archivo wim100.db.
- *
- * Se crea una sola vez por aplicación (patrón singleton) porque abrir una base
- * de datos es caro y dos instancias podrían pisarse entre sí.
- *
- * Al subir `version` los datos se pierden: es una migración destructiva, válida
- * en un MVP académico donde la base se repuebla sola con datos de prueba.
- */
+/** Base de datos local de la aplicación, en el archivo wim100.db. */
 @Database(
     entities = [
         Postulante::class,

@@ -4,13 +4,7 @@ import android.content.Context
 import android.content.ContextWrapper
 import androidx.fragment.app.FragmentActivity
 
-/**
- * Busca la Activity detrás del Context que entrega Compose.
- *
- * `LocalContext.current` no siempre es la Activity: puede venir envuelto. Como
- * BiometricPrompt exige una FragmentActivity, hay que ir desenvolviendo hasta
- * encontrarla.
- */
+/** Busca la Activity detrás del Context que entrega Compose. */
 fun Context.comoActividad(): FragmentActivity? {
     var actual: Context = this
     while (actual is ContextWrapper) {

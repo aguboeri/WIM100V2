@@ -56,15 +56,7 @@ import cl.dymcyber.wim100.disenio.componentes.sacudir
 import cl.dymcyber.wim100.dispositivo.LectorDocumentos
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Formulario de registro de una postulación.
- *
- * Cada campo se valida mientras se escribe; el botón Guardar revisa el
- * formulario completo y, si falta algo, se sacude en vez de guardar a medias.
- *
- * El CV se elige con el selector de documentos del sistema, que no requiere
- * permiso de almacenamiento: la app solo recibe el archivo que la usuaria marcó.
- */
+/** Formulario de registro de una postulación. */
 @Composable
 fun FormularioPantalla(
     alTerminar: () -> Unit,
@@ -125,7 +117,6 @@ fun FormularioPantalla(
             apoyo = "Formato: +56 9 1234 5678"
         )
 
-        // Área de especialidad: lista cerrada, para que el dato quede uniforme.
         Column(modifier = Modifier.fillMaxWidth()) {
             Box(modifier = Modifier.fillMaxWidth()) {
                 OutlinedButton(

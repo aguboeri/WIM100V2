@@ -5,13 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-/**
- * El puntaje y la observación de un criterio dentro de una valoración.
- *
- * Si se borra la valoración, estas filas se van con ella (CASCADE). Guardamos
- * el peso usado en ese momento para que un cambio futuro en la matriz no altere
- * puntajes ya registrados.
- */
+/** El puntaje y la observación de un criterio dentro de una valoración. */
 @Entity(
     tableName = "detalles_valoracion",
     foreignKeys = [

@@ -2,16 +2,10 @@ package cl.dymcyber.wim100.core.reglas
 
 import cl.dymcyber.wim100.core.dominio.PonderadorWim
 
-/**
- * Reglas de la matriz de evaluacion WIM.
- *
- * La regla de fondo: una nota baja no se puede dejar sin explicacion. Si un
- * criterio recibe 1 o 2, la evaluadora tiene que justificarlo por escrito, para
- * que la postulante y Direccion puedan entender la decision despues.
- */
+/** Reglas de la matriz de evaluación WIM. */
 object ReglasValoracion {
 
-    /** Desde este puntaje hacia abajo la observacion del criterio es obligatoria. */
+    /** Desde este puntaje hacia abajo la observación del criterio es obligatoria. */
     const val PUNTAJE_QUE_EXIGE_JUSTIFICACION = 2
     const val JUSTIFICACION_LARGO_MINIMO = 10
     const val CIERRE_LARGO_MINIMO = 20
@@ -24,7 +18,7 @@ object ReglasValoracion {
         return Veredicto.Correcto
     }
 
-    /** La observacion de un criterio solo es obligatoria cuando el puntaje es bajo. */
+    /** La observación de un criterio solo es obligatoria cuando el puntaje es bajo. */
     fun justificacion(puntaje: Int?, observacion: String): Veredicto {
         if (puntaje == null || puntaje > PUNTAJE_QUE_EXIGE_JUSTIFICACION) return Veredicto.Correcto
         val texto = observacion.trim()

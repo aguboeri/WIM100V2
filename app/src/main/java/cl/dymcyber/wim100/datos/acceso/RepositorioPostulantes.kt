@@ -13,12 +13,7 @@ import kotlinx.coroutines.flow.Flow
 /** Se lanza cuando el correo de una postulante ya está registrado. */
 class CorreoRepetidoException(mensaje: String) : Exception(mensaje)
 
-/**
- * Puerta de entrada a los datos de postulantes.
- *
- * Los ViewModel hablan con esta clase y nunca con el DAO: así, si mañana los
- * datos vinieran de un servidor, cambiaría solo esta capa.
- */
+/** Puerta de entrada a los datos de postulantes. */
 class RepositorioPostulantes(
     private val postulanteDao: PostulanteDao,
     private val criterioDao: CriterioDao,
@@ -37,7 +32,6 @@ class RepositorioPostulantes(
      * Registra una postulación y deja constancia en la bitácora.
      *
      * @throws CorreoRepetidoException si el correo ya existe. El índice único de
-     *         la tabla es la segunda barrera por si esta comprobación fallara.
      */
     suspend fun registrar(postulante: Postulante, sesion: Sesion): Long {
         if (postulanteDao.contarConCorreo(postulante.correo) > 0) {
@@ -64,10 +58,7 @@ class RepositorioPostulantes(
         )
     }
 
-    /**
-     * Cierra una postulación. Solo Dirección puede hacerlo y solo sobre una
-     * postulación que ya reunió las valoraciones mínimas.
-     */
+    /** Cierra una postulación. */
     suspend fun resolver(id: Long, decision: EtapaPostulacion, sesion: Sesion) {
         require(decision.estaCerrada) { "La resolución debe ser Seleccionada o Descartada" }
         require(sesion.perfil.puedeResolver) { "Solo Dirección puede resolver una postulación" }

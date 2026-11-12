@@ -6,13 +6,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-/**
- * Tema Material 3 de la aplicación.
- *
- * A propósito no se usa color dinámico (el que toma los tonos del fondo de
- * pantalla del teléfono): WIM 100 se presenta ante una empresa y la identidad
- * verde tiene que verse igual en cualquier equipo.
- */
+/** Tema Material 3 de la aplicación. */
 private val EsquemaClaro = lightColorScheme(
     primary = VerdeBosque,
     onPrimary = BlancoHueso,

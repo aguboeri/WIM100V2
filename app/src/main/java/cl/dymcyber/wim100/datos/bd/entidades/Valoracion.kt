@@ -5,14 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-/**
- * Una evaluación completa hecha por una evaluadora a una postulante.
- *
- * El índice único sobre (postulanteId, credencialEvaluadora) es la barrera de
- * la base de datos contra evaluaciones duplicadas: aunque el código fallara, el
- * motor rechazaría la segunda fila. La credencial se calcula en `Sesion`, así
- * que escribir el nombre con otras mayúsculas no sirve para evaluar dos veces.
- */
+/** Una evaluación completa hecha por una evaluadora a una postulante. */
 @Entity(
     tableName = "valoraciones",
     foreignKeys = [

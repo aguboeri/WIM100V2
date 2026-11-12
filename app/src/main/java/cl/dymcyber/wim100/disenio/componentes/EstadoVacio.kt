@@ -16,13 +16,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
-/**
- * Pantalla vacía explicada.
- *
- * Una lista sin resultados no debería quedar en blanco: hay que decir por qué
- * está vacía y qué se puede hacer. Es parte del estado de la interfaz, igual
- * que "cargando" o "con error".
- */
+/** Pantalla vacía explicada. */
 @Composable
 fun EstadoVacio(
     icono: ImageVector,

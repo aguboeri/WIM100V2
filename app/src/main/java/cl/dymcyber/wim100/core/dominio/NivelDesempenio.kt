@@ -1,11 +1,6 @@
 package cl.dymcyber.wim100.core.dominio
 
-/**
- * Lectura cualitativa del puntaje ponderado (escala 0 a 100).
- *
- * Los cortes son una decision del equipo sobre la matriz de ejemplo: la matriz
- * definitiva queda sujeta a validacion del Socio Formador.
- */
+/** Lectura cualitativa del puntaje ponderado (escala 0 a 100). */
 enum class NivelDesempenio(val rotulo: String, val pisoInclusive: Int) {
 
     SOBRESALIENTE("Sobresaliente", 85),

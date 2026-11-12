@@ -2,14 +2,7 @@ package cl.dymcyber.wim100.disenio
 
 import androidx.compose.ui.graphics.Color
 
-/**
- * Paleta de la aplicación.
- *
- * Verde profundo como color institucional, neutros cálidos en vez de blanco y
- * negro puros, y un solo rojo sobrio para los errores. Los colores se declaran
- * una vez aquí y nunca se escriben sueltos dentro de una pantalla: así cambiar
- * la identidad visual es editar este archivo y nada más.
- */
+/** Paleta de la aplicación. */
 
 // Verdes
 val VerdeProfundo = Color(0xFF0E2F22)
@@ -19,7 +12,6 @@ val VerdeSalvia = Color(0xFF7FA996)
 val VerdeNiebla = Color(0xFFD6E6DD)
 val VerdeHumo = Color(0xFFF1F6F3)
 
-// Neutros: no se usa #FFFFFF ni #000000 puros, cansan la vista en pantalla.
 val BlancoHueso = Color(0xFFFAFCFB)
 val GrisBorde = Color(0xFFC6D4CC)
 val GrisPiedra = Color(0xFF5B6963)

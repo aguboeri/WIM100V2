@@ -19,13 +19,7 @@ class ValoracionDuplicadaException(mensaje: String) : Exception(mensaje)
 /** Se lanza cuando la postulación ya fue resuelta por Dirección. */
 class PostulacionCerradaException(mensaje: String) : Exception(mensaje)
 
-/**
- * Reglas de datos de la evaluación.
- *
- * Aquí vive la regla más delicada del caso: una evaluadora no puede valorar dos
- * veces a la misma postulante. Se protege con dos barreras dentro de una
- * transacción, de modo que o se guarda todo o no se guarda nada.
- */
+/** Reglas de datos de la evaluación. */
 class RepositorioValoraciones(private val base: BaseWim) {
 
     private val valoracionDao = base.valoraciones()
@@ -44,11 +38,7 @@ class RepositorioValoraciones(private val base: BaseWim) {
         valoracionDao.contarDeEvaluadora(postulanteId, credencial) > 0
 
     /**
-     * Registra una valoración completa: la cabecera, el detalle por criterio,
-     * la nueva etapa de la postulante y la anotación en bitácora.
-     *
-     * Todo ocurre dentro de `withTransaction`, así que si cualquier paso falla
-     * la base queda como estaba.
+     * Registra una valoración completa dentro de una transacción.
      *
      * @param puntajesPorCriterio id del criterio asociado a su puntaje.
      * @throws ValoracionDuplicadaException si esta evaluadora ya la valoró.
@@ -63,8 +53,6 @@ class RepositorioValoraciones(private val base: BaseWim) {
         observacionesPorCriterio: Map<Long, String>,
         cierre: String
     ): Double {
-        // El nombre se guarda aquí para poder anotar el intento aunque la
-        // transacción se deshaga.
         var nombrePostulante = ""
         try {
             return base.withTransaction {
@@ -135,8 +123,7 @@ class RepositorioValoraciones(private val base: BaseWim) {
                 total
             }
         } catch (duplicada: ValoracionDuplicadaException) {
-            // Fuera de la transacción a propósito: si se anotara dentro, el
-            // rollback que provoca la excepción borraría también la anotación.
+            // Fuera de la transacción: dentro, el rollback la borraría.
             anotarIntentoDuplicado(sesion, nombrePostulante, postulanteId)
             throw duplicada
         }

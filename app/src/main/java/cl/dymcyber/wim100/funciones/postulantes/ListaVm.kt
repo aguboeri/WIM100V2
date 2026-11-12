@@ -22,13 +22,7 @@ data class ListaUi(
     val sinDatos: Boolean get() = !cargando && total == 0
 }
 
-/**
- * Lista de postulaciones con búsqueda y filtro por etapa.
- *
- * El filtrado ocurre aquí y no en la pantalla: la pantalla recibe la lista ya
- * resuelta. `combine` une tres fuentes (los datos de Room, el texto buscado y
- * la etapa elegida) y vuelve a calcular cada vez que cualquiera cambia.
- */
+/** Lista de postulaciones con búsqueda y filtro por etapa. */
 class ListaVm(deps: Dependencias) : ViewModel() {
 
     private val _busqueda = MutableStateFlow("")

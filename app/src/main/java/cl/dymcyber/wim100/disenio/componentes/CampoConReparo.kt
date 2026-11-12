@@ -25,14 +25,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import cl.dymcyber.wim100.funciones.Campo
 
-/**
- * Campo de texto con su mensaje de error.
- *
- * El componente no sabe nada de reglas de negocio: recibe el [campo] ya
- * revisado por el ViewModel y se limita a mostrarlo. Si hay reparo, pinta el
- * borde de error, muestra el ícono y despliega el mensaje con una animación
- * corta para que el cambio se note sin que la pantalla salte.
- */
+/** Campo de texto con su mensaje de error. */
 @Composable
 fun CampoConReparo(
     campo: Campo,

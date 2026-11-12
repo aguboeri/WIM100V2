@@ -18,12 +18,7 @@ data class BitacoraUi(
     val cargando: Boolean = true
 )
 
-/**
- * Bitácora de acciones: la trazabilidad que pide el caso.
- *
- * Aquí quedan los ingresos, los registros, las valoraciones, los intentos
- * duplicados y las resoluciones, cada uno con su autora y su hora.
- */
+/** Bitácora de acciones, con búsqueda por texto. */
 class BitacoraVm(deps: Dependencias) : ViewModel() {
 
     private val _busqueda = MutableStateFlow("")

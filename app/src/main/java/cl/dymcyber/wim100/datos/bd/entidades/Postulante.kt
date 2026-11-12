@@ -5,15 +5,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import cl.dymcyber.wim100.core.dominio.EtapaPostulacion
 
-/**
- * Una postulación al programa WIM 100.
- *
- * Las anotaciones de Room viven en la capa de datos y no en el dominio: así el
- * paquete `core` sigue siendo Kotlin puro y se puede probar sin emulador.
- *
- * El índice único sobre `correo` impide registrar dos veces a la misma persona.
- * Todos los datos son ficticios, como exige el caso.
- */
+/** Una postulación al programa WIM 100. */
 @Entity(
     tableName = "postulantes",
     indices = [Index(value = ["correo"], unique = true)]
@@ -36,7 +28,7 @@ data class Postulante(
     val tieneCurriculum: Boolean get() = !cvUri.isNullOrBlank()
 
     companion object {
-        /** Áreas de la convocatoria. Sirven para el selector del formulario. */
+        /** Áreas de la convocatoria. */
         val ESPECIALIDADES = listOf(
             "Seguridad ofensiva",
             "Respuesta a incidentes",

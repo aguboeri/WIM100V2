@@ -37,10 +37,7 @@ data class FichaUi(
         valoraciones.any { it.credencialEvaluadora == credencial }
 }
 
-/**
- * Ficha completa de una postulante: antecedentes, valoraciones recibidas,
- * acciones disponibles según el perfil y su rastro en la bitácora.
- */
+/** Ficha completa de una postulante: antecedentes, valoraciones y bitácora. */
 class FichaVm(
     guardado: SavedStateHandle,
     private val deps: Dependencias

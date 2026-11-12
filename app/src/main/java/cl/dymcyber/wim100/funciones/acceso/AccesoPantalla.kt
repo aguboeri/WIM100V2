@@ -46,13 +46,7 @@ import cl.dymcyber.wim100.dispositivo.VerificacionBiometrica
 import cl.dymcyber.wim100.dispositivo.comoActividad
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Pantalla de ingreso.
- *
- * Quien entra elige su perfil y escribe su nombre. Si el perfil es Dirección,
- * que es el único que puede seleccionar o descartar a una postulante, la app
- * pide además una verificación biométrica antes de dejar pasar.
- */
+/** Pantalla de ingreso. */
 @Composable
 fun AccesoPantalla(
     alEntrar: () -> Unit,

@@ -22,16 +22,7 @@ import cl.dymcyber.wim100.funciones.postulantes.PostulantesPantalla
 import cl.dymcyber.wim100.funciones.resultados.ResultadosPantalla
 import cl.dymcyber.wim100.funciones.valoracion.ValoracionPantalla
 
-/**
- * Grafo de navegación.
- *
- * Las transiciones no son decoración: el deslizamiento hacia la izquierda al
- * entrar y hacia la derecha al volver le dice a la usuaria si está avanzando o
- * retrocediendo, sin tener que leer nada.
- *
- * El id de la postulante viaja como argumento de la ruta y cada ViewModel lo
- * recibe por SavedStateHandle, no por parámetro.
- */
+/** Grafo de navegación. */
 @Composable
 fun GrafoWim(
     navegador: NavHostController,

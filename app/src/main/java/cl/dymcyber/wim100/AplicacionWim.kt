@@ -7,13 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
-/**
- * Punto de entrada de la aplicación.
- *
- * Android crea esta clase una sola vez, antes que cualquier pantalla. Por eso
- * aquí se arma el contenedor de dependencias y se siembran los datos de muestra
- * en segundo plano, sin bloquear el arranque.
- */
+/** Punto de entrada de la aplicación. */
 class AplicacionWim : Application() {
 
     lateinit var dependencias: Dependencias

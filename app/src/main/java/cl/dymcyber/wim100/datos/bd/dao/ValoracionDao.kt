@@ -7,12 +7,7 @@ import cl.dymcyber.wim100.datos.bd.entidades.DetalleValoracion
 import cl.dymcyber.wim100.datos.bd.entidades.Valoracion
 import kotlinx.coroutines.flow.Flow
 
-/**
- * Consultas sobre las valoraciones y sus detalles por criterio.
- *
- * `contarDeEvaluadora` es la primera barrera contra duplicados: el repositorio
- * la ejecuta dentro de la transacción antes de intentar insertar.
- */
+/** Consultas sobre las valoraciones y sus detalles por criterio. */
 @Dao
 interface ValoracionDao {
 
@@ -51,11 +46,7 @@ interface ValoracionDao {
     fun observarConsolidado(): Flow<List<FilaConsolidada>>
 }
 
-/**
- * Resultado de la consulta consolidada. No es una tabla: Room arma estos
- * objetos con las columnas que pide el SELECT, por eso cada alias calza con una
- * propiedad.
- */
+/** Resultado de la consulta consolidada. */
 data class FilaConsolidada(
     val postulanteId: Long,
     val nombre: String,

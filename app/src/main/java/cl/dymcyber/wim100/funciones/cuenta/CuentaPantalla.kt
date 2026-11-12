@@ -41,13 +41,7 @@ import cl.dymcyber.wim100.disenio.componentes.TituloSeccion
 import cl.dymcyber.wim100.dispositivo.AvisosLocales
 import cl.dymcyber.wim100.dispositivo.VerificacionBiometrica
 
-/**
- * Cuenta: quién está usando la app y en qué estado están los recursos del
- * dispositivo.
- *
- * Esta pantalla sirve además para explicar en la defensa qué recursos nativos
- * se integraron y qué permiso necesita cada uno.
- */
+/** Cuenta: sesión activa y estado de los recursos del dispositivo. */
 @Composable
 fun CuentaPantalla(
     sesion: Sesion?,

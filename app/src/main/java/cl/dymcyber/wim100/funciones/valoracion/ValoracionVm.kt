@@ -50,13 +50,7 @@ data class ValoracionUi(
         )
 }
 
-/**
- * Aplicación de la matriz WIM a una postulante.
- *
- * La regla que gobierna esta pantalla: un puntaje bajo exige justificación. El
- * ViewModel la revisa en cuanto cambia el puntaje o el texto, para que la
- * evaluadora vea el requisito apenas aparece y no al apretar Guardar.
- */
+/** Aplicación de la matriz WIM a una postulante. */
 class ValoracionVm(
     guardado: SavedStateHandle,
     private val deps: Dependencias
@@ -112,7 +106,7 @@ class ValoracionVm(
         else actuales + (criterioId to veredicto.aviso.orEmpty())
     }
 
-    /** Revisa la matriz completa: todos los criterios puntuados y justificados. */
+    /** Revisa que todos los criterios estén puntuados y justificados. */
     private fun revisarTodo(): Boolean {
         val actual = _estado.value
         val reparos = mutableMapOf<String, String>()

@@ -23,13 +23,7 @@ data class ResultadosUi(
     val pendientes: Int get() = filas.count { it.cantidadValoraciones == 0 }
 }
 
-/**
- * Resultados consolidados y resolución de Dirección.
- *
- * El promedio no se calcula en Kotlin recorriendo listas: lo entrega SQLite con
- * un GROUP BY, que es mucho más rápido y evita traer a memoria todas las
- * valoraciones solo para promediarlas.
- */
+/** Resultados consolidados y resolución de Dirección. */
 class ResultadosVm(private val deps: Dependencias) : ViewModel() {
 
     val sesion: StateFlow<Sesion?> = deps.sesion

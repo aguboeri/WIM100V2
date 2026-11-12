@@ -16,23 +16,12 @@ data class DocumentoElegido(
     val pesoBytes: Long
 )
 
-/**
- * Recurso nativo: selector de documentos del sistema y visor de PDF.
- *
- * No pide permiso de almacenamiento. El sistema muestra su propio explorador y
- * la app solo recibe el archivo que la usuaria eligió, que es el enfoque que
- * Android recomienda desde hace varias versiones.
- */
+/** Recurso nativo: selector de documentos del sistema y visor de PDF. */
 object LectorDocumentos {
 
     val TIPOS_ACEPTADOS = arrayOf("application/pdf")
 
-    /**
-     * Pide permiso permanente de lectura sobre el archivo elegido.
-     *
-     * Sin esto, al cerrar la app se pierde el acceso y el CV no se podría abrir
-     * de nuevo.
-     */
+    /** Pide permiso permanente de lectura sobre el archivo elegido. */
     fun conservarAcceso(contexto: Context, uri: Uri) {
         runCatching {
             contexto.contentResolver.takePersistableUriPermission(
@@ -56,8 +45,7 @@ object LectorDocumentos {
     }
 
     /**
-     * Dibuja la primera página del PDF como imagen, para mostrarla dentro de la
-     * app sin depender de otra aplicación.
+     * Dibuja la primera página del PDF como imagen, para mostrarla dentro de la app sin depender de otra aplicación.
      *
      * @return null si el archivo ya no existe o no se puede leer.
      */
@@ -72,7 +60,6 @@ object LectorDocumentos {
                     val escala = anchoDeseado.toFloat() / pagina.width
                     val alto = (pagina.height * escala).toInt().coerceAtLeast(1)
                     val lienzo = Bitmap.createBitmap(anchoDeseado, alto, Bitmap.Config.ARGB_8888)
-                    // El PDF puede tener zonas transparentes: se pintan de blanco.
                     android.graphics.Canvas(lienzo).drawColor(Color.WHITE)
                     pagina.render(lienzo, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
                     lienzo

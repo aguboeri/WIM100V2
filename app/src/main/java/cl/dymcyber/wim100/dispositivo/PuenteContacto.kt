@@ -5,17 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 
-/**
- * Recurso nativo: intents implícitos hacia otras apps del teléfono.
- *
- * No necesita permisos porque la app no lee la agenda ni llama por su cuenta:
- * solo le pasa el dato al sistema y es la usuaria quien decide con qué app
- * continuar y si confirma la acción.
- *
- * Cada función devuelve false si en el equipo no hay ninguna app capaz de
- * atender la petición, para poder avisarlo en pantalla en vez de que la app se
- * caiga.
- */
+/** Recurso nativo: intents implícitos hacia otras apps del teléfono. */
 object PuenteContacto {
 
     /** Abre el marcador con el número cargado, sin llamar automáticamente. */

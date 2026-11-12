@@ -6,7 +6,7 @@ import cl.dymcyber.wim100.core.dominio.PonderadorWim.Aporte
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-/** Pruebas del cálculo ponderado. Corren sin emulador porque no tocan Android. */
+/** Pruebas del cálculo ponderado. */
 class PonderadorWimTest {
 
     /** Los 5 criterios de la matriz de ejemplo con sus pesos. */

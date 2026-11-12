@@ -4,13 +4,7 @@ import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-/**
- * Un hecho registrado en la bitácora: quién hizo qué, sobre quién y cuándo.
- *
- * A propósito no tiene clave foránea hacia `postulantes`: si una postulación se
- * borrara, la huella de lo ocurrido debe sobrevivir. Eso es la trazabilidad que
- * pide el caso.
- */
+/** Un hecho registrado en la bitácora: quién hizo qué, sobre quién y cuándo. */
 @Entity(
     tableName = "bitacora",
     indices = [Index(value = ["ocurridoEn"])]

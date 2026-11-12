@@ -67,13 +67,7 @@ import cl.dymcyber.wim100.dispositivo.LectorDocumentos
 import cl.dymcyber.wim100.dispositivo.PuenteContacto
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Ficha completa de una postulante.
- *
- * Reúne tres cosas: sus antecedentes, las valoraciones recibidas y las acciones
- * que su etapa y el perfil de quien mira permiten. Dos recursos nativos se usan
- * aquí: el visor del CV en PDF y los intents de contacto.
- */
+/** Ficha completa de una postulante. */
 @Composable
 fun FichaPantalla(
     alValorar: (Long) -> Unit,
@@ -141,7 +135,6 @@ fun FichaPantalla(
             }
         }
 
-        // Contacto mediante intents: la app no llama ni envía nada por su cuenta
         TituloSeccion(
             texto = "Contacto",
             apoyo = "Se abre la app correspondiente del teléfono; tú decides si continuar."
@@ -187,7 +180,6 @@ fun FichaPantalla(
             }
         }
 
-        // Currículum: recurso nativo (selector de documentos + PdfRenderer)
         TituloSeccion(texto = "Currículum", apoyo = "PDF de prueba, visto dentro de la app.")
         TarjetaCurriculum(
             postulante = postulante,
@@ -338,13 +330,7 @@ private fun TarjetaCurriculum(
     }
 }
 
-/**
- * Qué puede hacer quien mira la ficha.
- *
- * Es una estructura de control sobre dos datos: el perfil de la sesión y la
- * etapa de la postulación. Las reglas del caso quedan visibles aquí: solo
- * Dirección resuelve, solo con dos valoraciones, y nunca sobre un caso cerrado.
- */
+/** Qué puede hacer quien mira la ficha. */
 @Composable
 private fun AccionesSegunPerfil(
     etapa: EtapaPostulacion,

@@ -12,13 +12,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import cl.dymcyber.wim100.R
 
-/**
- * Recurso nativo: notificaciones locales.
- *
- * Avisa cuando se registra una valoración. Desde Android 13 el permiso se pide
- * en ejecución, y si la usuaria lo rechaza la app sigue funcionando igual: el
- * aviso es una comodidad, no un requisito del flujo.
- */
+/** Recurso nativo: notificaciones locales. */
 object AvisosLocales {
 
     private const val CANAL = "wim_valoraciones"
@@ -46,7 +40,7 @@ object AvisosLocales {
         ) == PackageManager.PERMISSION_GRANTED
     }
 
-    /** Muestra el aviso. Si no hay permiso simplemente no hace nada. */
+    /** Muestra el aviso. */
     @SuppressLint("MissingPermission")
     fun avisarValoracion(contexto: Context, nombrePostulante: String, puntaje: Double) {
         if (!permitido(contexto)) return

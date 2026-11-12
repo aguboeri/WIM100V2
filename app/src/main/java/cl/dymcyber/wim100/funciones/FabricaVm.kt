@@ -15,13 +15,7 @@ import cl.dymcyber.wim100.funciones.postulantes.ListaVm
 import cl.dymcyber.wim100.funciones.resultados.ResultadosVm
 import cl.dymcyber.wim100.funciones.valoracion.ValoracionVm
 
-/**
- * Fábrica única de ViewModels.
- *
- * Compose pide un ViewModel y esta fábrica sabe con qué dependencias crearlo.
- * Sin ella habría que pasar los repositorios por parámetro pantalla por
- * pantalla, que es justo lo que MVVM trata de evitar.
- */
+/** Fábrica única de ViewModels. */
 object FabricaVm {
 
     val Reglas = viewModelFactory {

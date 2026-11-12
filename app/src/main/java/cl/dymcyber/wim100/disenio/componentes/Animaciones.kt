@@ -12,10 +12,6 @@ import androidx.compose.ui.unit.dp
 /**
  * Sacude el elemento de lado a lado.
  *
- * Se usa cuando alguien intenta guardar un formulario incompleto: el movimiento
- * lleva la vista al botón y deja claro que la acción no se ejecutó, sin tapar
- * la pantalla con un cartel.
- *
  * @param disparador cada vez que este número cambia, la animación vuelve a correr.
  */
 @Composable

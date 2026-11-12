@@ -7,12 +7,7 @@ import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Insights
 import androidx.compose.ui.graphics.vector.ImageVector
 
-/**
- * Las direcciones de la app, escritas en un solo lugar.
- *
- * Tener las rutas como constantes evita el clásico error de escribir mal un
- * texto en una pantalla y descubrirlo recién al ejecutar.
- */
+/** Las direcciones de la app, escritas en un solo lugar. */
 object Destinos {
 
     const val ARG_POSTULANTE = "postulanteId"

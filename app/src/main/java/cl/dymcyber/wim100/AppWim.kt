@@ -34,14 +34,7 @@ import cl.dymcyber.wim100.navegacion.Destinos
 import cl.dymcyber.wim100.navegacion.GrafoWim
 import cl.dymcyber.wim100.navegacion.SeccionPrincipal
 
-/**
- * Estructura visual de la aplicación.
- *
- * Un solo Scaffold manda sobre la barra superior, la barra inferior y el botón
- * flotante, y decide qué mostrar según la ruta actual. Tenerlo en un solo lugar
- * evita que cada pantalla arme su propio encabezado y que terminen todos
- * distintos.
- */
+/** Estructura visual de la aplicación. */
 @Composable
 fun AppWim() {
     val navegador = rememberNavController()

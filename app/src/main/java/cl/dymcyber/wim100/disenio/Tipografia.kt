@@ -6,13 +6,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-/**
- * Escala tipográfica.
- *
- * Cinco tamaños y tres pesos para toda la app. La jerarquía se construye con
- * tamaño y peso, nunca con colores distintos, para que el texto siga siendo
- * legible en modo claro y oscuro.
- */
+/** Escala tipográfica. */
 val TipografiaWim = Typography(
     displaySmall = TextStyle(
         fontFamily = FontFamily.Default,

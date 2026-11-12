@@ -35,13 +35,7 @@ import cl.dymcyber.wim100.datos.bd.entidades.EventoBitacora
 import cl.dymcyber.wim100.disenio.componentes.EstadoVacio
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Bitácora de acciones: la trazabilidad del proceso.
- *
- * Deja constancia de quién hizo qué y cuándo, incluidos los intentos de
- * valoración duplicada. Esa huella es lo que permite auditar una decisión
- * meses después.
- */
+/** Bitácora de acciones: la trazabilidad del proceso. */
 @Composable
 fun BitacoraPantalla(
     modifier: Modifier = Modifier,

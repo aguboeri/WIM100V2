@@ -44,13 +44,7 @@ import cl.dymcyber.wim100.disenio.componentes.EstadoVacio
 import cl.dymcyber.wim100.disenio.componentes.EtiquetaEtapa
 import cl.dymcyber.wim100.funciones.FabricaVm
 
-/**
- * Resultados consolidados y resolución de Dirección.
- *
- * El orden lo calcula SQLite con un promedio agrupado, no la pantalla. Los
- * botones de resolver solo aparecen para el perfil Dirección y solo sobre
- * postulaciones que ya reunieron las valoraciones mínimas.
- */
+/** Resultados consolidados y resolución de Dirección. */
 @Composable
 fun ResultadosPantalla(
     alAbrirFicha: (Long) -> Unit,

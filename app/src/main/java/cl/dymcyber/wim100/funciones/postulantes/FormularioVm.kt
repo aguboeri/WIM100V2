@@ -37,13 +37,7 @@ data class FormularioUi(
     val largoSintesis: Int get() = sintesis.valor.trim().length
 }
 
-/**
- * Formulario de registro de una postulación.
- *
- * Cada tecla dispara la regla del campo correspondiente, así el error aparece
- * mientras se escribe y no al final. Las reglas no están aquí: viven en
- * `ReglasPostulante`, que es Kotlin puro y tiene sus propias pruebas.
- */
+/** Formulario de registro de una postulación. */
 class FormularioVm(private val deps: Dependencias) : ViewModel() {
 
     private val _estado = MutableStateFlow(FormularioUi())
