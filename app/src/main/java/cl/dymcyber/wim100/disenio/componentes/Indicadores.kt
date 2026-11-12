@@ -25,8 +25,8 @@ import androidx.compose.ui.unit.dp
 import cl.dymcyber.wim100.core.dominio.EtapaPostulacion
 import cl.dymcyber.wim100.core.dominio.NivelDesempenio
 import cl.dymcyber.wim100.core.formato.Formateador
-import cl.dymcyber.wim100.disenio.AmbarAviso
-import cl.dymcyber.wim100.disenio.AmbarFondo
+import cl.dymcyber.wim100.disenio.AmbarAtencion
+import cl.dymcyber.wim100.disenio.AmbarSuave
 import cl.dymcyber.wim100.disenio.RojoFondo
 import cl.dymcyber.wim100.disenio.RojoReparo
 import cl.dymcyber.wim100.disenio.VerdeContenedor
@@ -40,7 +40,7 @@ fun EtiquetaEtapa(etapa: EtapaPostulacion, modifier: Modifier = Modifier) {
     when (etapa) {
         EtapaPostulacion.SELECCIONADA -> { fondo = VerdeContenedor; tinta = VerdeProfundo }
         EtapaPostulacion.DESCARTADA -> { fondo = RojoFondo; tinta = RojoReparo }
-        EtapaPostulacion.EVALUADA -> { fondo = AmbarFondo; tinta = AmbarAviso }
+        EtapaPostulacion.EVALUADA -> { fondo = AmbarSuave; tinta = AmbarAtencion }
         else -> {
             fondo = MaterialTheme.colorScheme.surfaceVariant
             tinta = MaterialTheme.colorScheme.onSurfaceVariant
@@ -80,7 +80,7 @@ fun MedidorPuntaje(
         targetValue = when (nivel) {
             NivelDesempenio.SOBRESALIENTE -> MaterialTheme.colorScheme.primary
             NivelDesempenio.SOLIDA -> MaterialTheme.colorScheme.secondary
-            NivelDesempenio.EN_DESARROLLO -> AmbarAviso
+            NivelDesempenio.EN_DESARROLLO -> AmbarAtencion
             NivelDesempenio.INSUFICIENTE -> MaterialTheme.colorScheme.error
         },
         animationSpec = tween(durationMillis = 600),

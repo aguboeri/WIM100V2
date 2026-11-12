@@ -21,8 +21,8 @@ val Carbon = Color(0xFF141917)
 // Señales
 val RojoReparo = Color(0xFF8E2A24)
 val RojoFondo = Color(0xFFFBE7E5)
-val AmbarAviso = Color(0xFF7A5A12)
-val AmbarFondo = Color(0xFFFBF0D9)
+val AmbarAtencion = Color(0xFF7A5A12)
+val AmbarSuave = Color(0xFFFBF0D9)
 
 // Modo oscuro
 val VerdeClaroNoche = Color(0xFF8FC8AC)
