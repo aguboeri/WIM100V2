@@ -19,7 +19,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Assignment
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.AttachFile
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.CheckCircle
@@ -395,7 +395,7 @@ private fun AccionesSegunPerfil(
             onClick = alValorar,
             modifier = Modifier.fillMaxWidth().height(52.dp)
         ) {
-            Icon(Icons.AutoMirrored.Filled.Assignment, contentDescription = null)
+            Icon(Icons.Filled.Edit, contentDescription = null)
             Spacer(Modifier.width(8.dp))
             Text("Valorar con la matriz WIM")
         }
