@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import cl.dymcyber.wim100.datos.bd.dao.BitacoraDao
-import cl.dymcyber.wim100.datos.bd.dao.CriterioDao
+import cl.dymcyber.wim100.datos.bd.dao.MatrizDao
 import cl.dymcyber.wim100.datos.bd.dao.PostulanteDao
 import cl.dymcyber.wim100.datos.bd.dao.ValoracionDao
 import cl.dymcyber.wim100.datos.bd.entidades.CriterioWim
@@ -31,7 +31,7 @@ import cl.dymcyber.wim100.datos.bd.entidades.Valoracion
 abstract class BaseWim : RoomDatabase() {
 
     abstract fun postulantes(): PostulanteDao
-    abstract fun criterios(): CriterioDao
+    abstract fun criterios(): MatrizDao
     abstract fun valoraciones(): ValoracionDao
     abstract fun bitacora(): BitacoraDao
 

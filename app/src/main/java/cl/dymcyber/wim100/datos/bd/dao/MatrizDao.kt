@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 /** Consultas sobre la matriz de evaluación. */
 @Dao
-interface CriterioDao {
+interface MatrizDao {
 
     @Insert
     suspend fun insertarTodos(criterios: List<CriterioWim>)

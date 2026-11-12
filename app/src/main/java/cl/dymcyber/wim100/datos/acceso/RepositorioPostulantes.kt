@@ -3,7 +3,7 @@ package cl.dymcyber.wim100.datos.acceso
 import cl.dymcyber.wim100.core.dominio.EtapaPostulacion
 import cl.dymcyber.wim100.core.dominio.Sesion
 import cl.dymcyber.wim100.datos.bd.dao.BitacoraDao
-import cl.dymcyber.wim100.datos.bd.dao.CriterioDao
+import cl.dymcyber.wim100.datos.bd.dao.MatrizDao
 import cl.dymcyber.wim100.datos.bd.dao.PostulanteDao
 import cl.dymcyber.wim100.datos.bd.entidades.CriterioWim
 import cl.dymcyber.wim100.datos.bd.entidades.EventoBitacora
@@ -16,7 +16,7 @@ class CorreoRepetidoException(mensaje: String) : Exception(mensaje)
 /** Puerta de entrada a los datos de postulantes. */
 class RepositorioPostulantes(
     private val postulanteDao: PostulanteDao,
-    private val criterioDao: CriterioDao,
+    private val criterioDao: MatrizDao,
     private val bitacoraDao: BitacoraDao
 ) {
 
