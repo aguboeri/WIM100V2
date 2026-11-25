@@ -14,7 +14,7 @@ resultados para que Dirección resuelva.
 | Nombre | Usuario de GitHub |
 |---|---|
 | Agustín Boeri | aguboeri |
-| _(completar)_ | _(completar)_ |
+| Danae Aliante | danaealiante |
 
 Equipo N° _(completar)_
 
